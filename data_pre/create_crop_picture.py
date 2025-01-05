@@ -114,10 +114,10 @@ def max_bbox(fp,img_path,save_image_path,save_txt_path):
                     image = Image.open(image_path)
                     if car_x2!=car_x1 and car_y1!=car_y2:
                         # 裁剪图片并保存
-                        # crop_image = image.crop((car_x1,car_y1,car_x2,car_y2))
+                        crop_image = image.crop((car_x1,car_y1,car_x2,car_y2))
                         new_name = os.path.basename(fp)[:-4] + '_' + str(i)
-                        # new_image_name = os.path.join(save_image_path,f"{new_name}.jpg") 
-                        # crop_image.save(new_image_name)
+                        new_image_name = os.path.join(save_image_path,f"{new_name}.jpg") 
+                        crop_image.save(new_image_name)
                         # 保存labels
                         txt_path = os.path.join(save_txt_path,f"{new_name}.txt")
                         # 归一化
@@ -144,10 +144,10 @@ def max_bbox(fp,img_path,save_image_path,save_txt_path):
                     image = Image.open(image_path)
                     if sxmax!=sxmin and symax!=symin:
                         # 裁剪图片并保存
-                        # crop_image = image.crop((sxmin,symin,sxmax,symax))
+                        #crop_image = image.crop((sxmin,symin,sxmax,symax))
                         new_name = os.path.basename(fp)[:-4] + '_' + str(i)
-                        # new_image_name = os.path.join(save_image_path,f"{new_name}.jpg") 
-                        # crop_image.save(new_image_name)
+                        new_image_name = os.path.join(save_image_path,f"{new_name}.jpg") 
+                        #crop_image.save(new_image_name)
                         # 保存labels
                         txt_path = os.path.join(save_txt_path,f"{new_name}.txt")
                         # 归一化车
@@ -174,4 +174,15 @@ if __name__ == '__main__':
     for txt_fp in os.listdir(fp):
         fp_one = os.path.join(fp,txt_fp)
         max_bbox(fp_one,img_path,save_image_path,save_txt_path)
+
+    fp = './data/aicity2024_track5/stage1/annoations/original_val'   # 原labels的路径
+    img_path = './data/aicity2024_track5/stage1/images/val'
+    '''保存路径'''
+    save_image_path = './data/aicity2024_track5/stage2/images/val/' # "/data1/zhp/2024AICITY/stage2_datasets_v2.0/image/train"
+    save_txt_path = './data/aicity2024_track5/stage2/labels/val' # "/data1/zhp/2024AICITY/stage2_datasets_v2.0/labels/train"
+    '''最大外接矩形'''
+    for txt_fp in os.listdir(fp):
+        fp_one = os.path.join(fp,txt_fp)
+        max_bbox(fp_one,img_path,save_image_path,save_txt_path)
+
         

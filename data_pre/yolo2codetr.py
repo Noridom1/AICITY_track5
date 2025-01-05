@@ -66,4 +66,10 @@ category = [
     {"id": 7,"name": "P0Helmet","supercategory": "P0Helmet"},
     {"id": 8,"name": "P0NoHelmet","supercategory": "P0NoHelmet"}
     ]
+
+yolo_to_coco(input_dir, input_txt_dir,output_json_path, category)
+
+input_dir = './data/aicity2024_track5/stage2/images/val'
+input_txt_dir= './data/aicity2024_track5/stage2/labels/val'
+output_json_path = './data/aicity2024_track5/stage2/val_ann.json'
 yolo_to_coco(input_dir, input_txt_dir,output_json_path, category)

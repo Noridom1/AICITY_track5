@@ -61,8 +61,8 @@ data = dict(
     workers_per_gpu=2,
     train=dict(
         type='CocoDataset',
-        ann_file='./data/aicity2024_track5/stage2/train_ann.json',
-        img_prefix='./data/aicity2024_track5/stage2/images/train/',
+        ann_file='/content/AICITY_track5/data_pre/data/aicity2024_track5/stage2/train_ann.json',
+        img_prefix='/content/AICITY_track5/data_pre/data/aicity2024_track5/stage2/images/train/',
         pipeline=[
             dict(type='LoadImageFromFile'),
             dict(type='LoadAnnotations', with_bbox=True),
@@ -81,8 +81,8 @@ data = dict(
         classes=('motorbike' ,'DHelmet' , 'DNoHelmet', 'P1Helmet', 'P1NoHelmet', 'P2Helmet' , 'P2NoHelmet' , 'P0Helmet' ,'P0NoHelmet')), #  'P1Helmet', 'P1NoHelmet', 'P2Helmet' , 'P2NoHelmet' , 'P0Helmet' ,'P0NoHelmet')),
     val=dict(
         type='CocoDataset',
-        ann_file='./data/aicity2024_track5/stage2/val_ann.json',
-        img_prefix='./data/aicity2024_track5/stage2/images/val/',
+        ann_file='/content/AICITY_track5/data_pre/data/aicity2024_track5/stage2/val_ann.json',
+        img_prefix='/content/AICITY_track5/data_pre/data/aicity2024_track5/stage2/images/val/',
         pipeline=[
             dict(type='LoadImageFromFile'),
             dict(
