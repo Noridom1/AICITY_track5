@@ -146,7 +146,7 @@ def max_bbox(fp,img_path,save_image_path,save_txt_path):
                         # 裁剪图片并保存
                         #crop_image = image.crop((sxmin,symin,sxmax,symax))
                         new_name = os.path.basename(fp)[:-4] + '_' + str(i)
-                        new_image_name = os.path.join(save_image_path,f"{new_name}.jpg") 
+                        #new_image_name = os.path.join(save_image_path,f"{new_name}.jpg") 
                         #crop_image.save(new_image_name)
                         # 保存labels
                         txt_path = os.path.join(save_txt_path,f"{new_name}.txt")
@@ -175,6 +175,8 @@ if __name__ == '__main__':
         fp_one = os.path.join(fp,txt_fp)
         max_bbox(fp_one,img_path,save_image_path,save_txt_path)
 
+    print("finished train")
+
     fp = './data/aicity2024_track5/stage1/annoations/original_val'   # 原labels的路径
     img_path = './data/aicity2024_track5/stage1/images/val'
     '''保存路径'''
@@ -184,5 +186,6 @@ if __name__ == '__main__':
     for txt_fp in os.listdir(fp):
         fp_one = os.path.join(fp,txt_fp)
         max_bbox(fp_one,img_path,save_image_path,save_txt_path)
+    print("finished val")
 
         

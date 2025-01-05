@@ -132,7 +132,7 @@ log_config = dict(interval=50, hooks=[dict(type='TextLoggerHook')])
 custom_hooks = [dict(type='NumClassCheckHook')]
 dist_params = dict(backend='nccl')
 log_level = 'INFO'
-load_from = '/home/zhp/2024AICITY/Co-DETR-main/models/co_dino_5scale_swin_large_16e_o365tococo.pth'
+load_from = '/content/AICITY_track5/stage2_grained-fine detector/Co-DETR-main/Co-DETR weights/co_dino_5scale_swin_large_16e_o365tococo.pth'
 resume_from = None
 workflow = [('train', 1)]
 opencv_num_threads = 0
@@ -385,6 +385,6 @@ lr_config = dict(policy='step', step=[8])
 runner = dict(type='EpochBasedRunner', max_epochs=12)
 pretrained = None
 classes = ('motorbike' ,'DHelmet' , 'DNoHelmet', 'P1Helmet', 'P1NoHelmet', 'P2Helmet' , 'P2NoHelmet' , 'P0Helmet' ,'P0NoHelmet') # , 'P1Helmet', 'P1NoHelmet', 'P2Helmet' , 'P2NoHelmet' , 'P0Helmet' ,'P0NoHelmet')
-work_dir = '/data1/zhp/2024AICITY/Co-detr/path_stage1_2cls'
+work_dir = '/content/AICITY_track5/stage2_grained-fine detector/save/'
 gpu_ids = range(5, 7)
 auto_resume = False
